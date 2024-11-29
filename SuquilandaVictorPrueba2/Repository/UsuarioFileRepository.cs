@@ -1,4 +1,5 @@
-﻿using SuquilandaVictorPrueba2.Interfaces;
+﻿using Newtonsoft.Json;
+using SuquilandaVictorPrueba2.Interfaces;
 using SuquilandaVictorPrueba2.Models;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace SuquilandaVictorPrueba2.Repository
 {
     internal class UsuarioFileRepository : IUsuarioRepository
     {
+        public string _fileName = Path.Combine(FileSystem.AppDataDirectory, "VictorSuquilanda.txt");
         public bool ActualizarUsuario(Usuario usuario)
         {
             throw new NotImplementedException();
@@ -17,7 +19,16 @@ namespace SuquilandaVictorPrueba2.Repository
 
         public bool CrearUsuario(Usuario usuario)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string user_json = JsonConvert.SerializeObject(usuario);
+                File.WriteAllText(_fileName, user_json);
+                return true;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
         }
 
         public bool EliminarUsuario(int Id)
@@ -32,7 +43,13 @@ namespace SuquilandaVictorPrueba2.Repository
 
         public Usuario GetUsuario(int Id)
         {
-            throw new NotImplementedException();
+            Usuario usuario= new Usuario();
+            if (File.Exists(_fileName))
+            {
+                string data = File.ReadAllText(_fileName);
+                usuario = JsonConvert.DeserializeObject<Usuario>(data);
+            }
+            return usuario;
         }
     }
 }
