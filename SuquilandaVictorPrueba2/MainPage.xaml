@@ -11,7 +11,7 @@
            HorizontalTextAlignment="Center"  
            VerticalTextAlignment="Center" />
         <Grid Padding="30">
-            <Entry x:Name="entry"
+            <Entry x:Name="vsuquilanda_entry1"
                 Placeholder="Enter text"/>
         </Grid>
 
@@ -22,7 +22,7 @@
             HorizontalTextAlignment="Center"  
             VerticalTextAlignment="Center" />
         <Grid Padding="30">
-            <Entry x:Name="entry"
+            <Entry x:Name="vsuquilanda_entry2"
                    Placeholder="Enter text"/>
         </Grid>
 

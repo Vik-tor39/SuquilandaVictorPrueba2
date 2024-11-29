@@ -4,12 +4,25 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:SuquilandaVictorPrueba2"
-    Shell.FlyoutBehavior="Disabled"
     Title="SuquilandaVictorPrueba2">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <Tab
+            Title="Main Page"
+            Icon="dotnet_bot.png">
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
 
+        <Tab
+            Title="Página 2"
+            Icon="dotnet_bot.png">
+            <ShellContent
+                Title="Página 2"
+                ContentTemplate="{DataTemplate local:Page2}"
+                Route="Page2" />
+        </Tab>
+    </TabBar>
 </Shell>
