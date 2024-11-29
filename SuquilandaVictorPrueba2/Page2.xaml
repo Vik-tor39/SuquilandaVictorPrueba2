@@ -3,10 +3,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SuquilandaVictorPrueba2.Page2"
              Title="Page2">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Soy el grid 0x0"
+           BackgroundColor="LightBlue"
+           TextColor="White"    
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="FillAndExpand" 
+           FontSize="20"
+           FontFamily="Arial"  
+           HorizontalTextAlignment="Center"  
+           VerticalTextAlignment="Center"    />
+
+        <Label Grid.Column="1"
+           BackgroundColor="LightGreen"
+           TextColor="Black"    
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="FillAndExpand"
+           Text="Soy el grid 0x1" 
+           FontSize="24"
+           FontFamily="Helvetica"  
+           HorizontalTextAlignment="Center"  
+           VerticalTextAlignment="Center"    />
+
+        <Label Grid.Row="1"
+           BackgroundColor="LightCoral"
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="FillAndExpand"    
+           TextColor="Gray"    
+           Text="Soy el grid 1x0" 
+           FontSize="29"
+           FontFamily="Courier New"  
+           HorizontalTextAlignment="Center"  
+           VerticalTextAlignment="Center"    />
+
+        <Label Grid.Row="1"
+           BackgroundColor="LightCoral"
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="FillAndExpand"    
+           TextColor="Gray"    
+           Text="Soy el grid 1x0" 
+           FontSize="29"
+           FontFamily="Courier New"  
+           HorizontalTextAlignment="Center"  
+           VerticalTextAlignment="Center"    />
+
+        <Grid Grid.Column="1"
+              Grid.Row="1"
+              Background="LightGray">
+        </Grid>
+
+    </Grid>
 </ContentPage>
